@@ -1,0 +1,86 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-gray-50 p-6">
+      <header className="text-center mb-10">
+        <h1 className="text-4xl font-bold text-blue-800">HealthCare Diagnostics</h1>
+        <p className="text-gray-600 text-lg mt-2">
+          Conducting Physical Tests – Delivering Digital Results
+        </p>
+      </header>
+
+      <Tabs defaultValue="patient" className="max-w-4xl mx-auto">
+        <TabsList className="grid w-full grid-cols-4">
+          <TabsTrigger value="admin">Admin</TabsTrigger>
+          <TabsTrigger value="doctor">Doctor</TabsTrigger>
+          <TabsTrigger value="technician">Technician</TabsTrigger>
+          <TabsTrigger value="patient">Patient</TabsTrigger>
+        </TabsList>
+
+        <Card className="mt-6">
+          <CardContent className="space-y-6 p-6">
+            <h2 className="text-2xl font-semibold text-blue-700">Login</h2>
+            <Input placeholder="Username" />
+            <Input placeholder="Password" type="password" />
+            <Button className="w-full">Login</Button>
+          </CardContent>
+        </Card>
+      </Tabs>
+
+      <section className="max-w-5xl mx-auto mt-16 grid md:grid-cols-2 gap-8">
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-xl font-semibold text-green-700">Admin Dashboard</h3>
+            <ul className="mt-4 text-gray-700 list-disc list-inside">
+              <li>Create & manage accounts (Patients, Doctors, Technicians)</li>
+              <li>Monitor all activities & reports</li>
+              <li>Secure billing and payment confirmation</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-xl font-semibold text-purple-700">Doctor's Portal</h3>
+            <ul className="mt-4 text-gray-700 list-disc list-inside">
+              <li>Access patient reports anytime</li>
+              <li>View test history & observations</li>
+              <li>Communicate with patients securely</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-xl font-semibold text-orange-700">Lab Technician</h3>
+            <ul className="mt-4 text-gray-700 list-disc list-inside">
+              <li>Upload test reports in PDF</li>
+              <li>View previously uploaded records</li>
+              <li>Manage pending report submissions</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-6">
+            <h3 className="text-xl font-semibold text-red-700">Patient Panel</h3>
+            <ul className="mt-4 text-gray-700 list-disc list-inside">
+              <li>View & download reports (PDF format)</li>
+              <li>Payment status tracking</li>
+              <li>Access report history</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </section>
+
+      <footer className="mt-20 text-center text-gray-500 text-sm">
+        &copy; 2025 HealthCare Diagnostics. All rights reserved.
+      </footer>
+    </div>
+  );
+}
