@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Details - Health Care Diagnostics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section for Report Details Page -->
+    <header>
+        <div class="logo">
+            <h1>Health Care Diagnostics</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reports.html" class="btn">Back to Reports</a></li>
+                <li><a href="login.html" class="btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Report Details Section -->
+    <section class="report-details">
+        <h2>Test Report: <span id="testName">Test Name</span></h2>
+        
+        <div id="reportContent">
+            <!-- Test report details will be dynamically injected here -->
+            <p>This section will display detailed information about the test, its results, and any recommendations or comments based on the results.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Health Care Diagnostics. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Get the URL query string parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const testName = urlParams.get('test');
+        
+        // Display the test name dynamically
+        document.getElementById('testName').textContent = capitalizeFirstLetter(testName);
+
+        // Example report content based on the test name
+        const reportContent = {
+            'laboratory_tests': 'Detailed laboratory test results will be shown here, including blood tests, urine tests, and other diagnostic tests.',
+            'heart_tests': 'Heart tests results such as ECG and Echo tests with detailed analysis of heart function.',
+            'liver_tests': 'Results of liver function tests with recommendations for maintaining liver health.',
+            'lung_tests': 'Results from lung function tests, including spirometry, and assessment of respiratory health.',
+            'diabetes_tests': 'Results from blood sugar levels, A1c test, and other diabetes-related tests.',
+            'vitamin_tests': 'Vitamin D and B12 levels, and recommendations for supplements if needed.',
+            'kidney_tests': 'Results of kidney function tests, including creatinine levels, GFR, and urine tests.',
+            'thyroid_tests': 'Thyroid function test results such as TSH, T3, and T4 levels.'
+        };
+
+        // Inject the report content dynamically based on the test name
+        document.getElementById('reportContent').textContent = reportContent[testName] || 'Report details are not available for this test yet.';
+
+        // Capitalize the first letter of the test name
+        function capitalizeFirstLetter(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1).replace(/_/g, ' ');
+        }
+    </script>
+
+</body>
+</html>
