@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Health Care Diagnostics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section for Login Page -->
+    <header>
+        <div class="logo">
+            <h1>Health Care Diagnostics</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login Form Section -->
+    <section class="login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="role">Select Your Role:</label>
+            <select id="role" required>
+                <option value="">Select Role</option>
+                <option value="lab_assistant">Lab Assistant</option>
+                <option value="admin">Admin</option>
+                <option value="patient">Patient</option>
+                <option value="doctor">Doctor</option>
+                <option value="laboratory">Laboratory</option>
+            </select>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Health Care Diagnostics. All Rights Reserved.</p>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
